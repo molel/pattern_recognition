@@ -8,9 +8,9 @@ def main():
                Class("class_D.txt")]
     for class_ in classes:
         print(class_)
-    objects = get_objects("objects.txt")
-    for obj in objects:
-        obj.define_class(classes)
+    patterns = get_patterns("patterns_to_define.txt")
+    for pattern in patterns:
+        pattern.define_class(classes)
 
 
 if __name__ == '__main__':

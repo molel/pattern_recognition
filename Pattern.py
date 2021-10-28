@@ -1,5 +1,5 @@
-class Obj:
-    def __init__(self, data):
+class Pattern:
+    def __init__(self, data: list):
         self.data = data
 
     def __get__(self, instance, owner):
@@ -25,15 +25,12 @@ class Obj:
             result += "\n"
         return result
 
-    def __copy__(self):
-        from copy import copy
-        return copy(self.data)
-
     def define_class(self, classes: list):
+        print("-" * 40 + "\n")
         print(self)
         distances = dict()
         for class_ in classes:
             distance = class_.find_distance(self)
             print(f"Class {class_.name}: {distance}")
             distances[class_] = distance
-        print(f"Object belongs to class {min(distances, key=lambda x: distances[x]).name}")
+        print(f"Object belongs to class {min(distances, key=lambda x: distances[x]).name}\n")
